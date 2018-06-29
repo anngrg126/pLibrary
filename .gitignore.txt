@@ -1,0 +1,6 @@
+wsgi.py
+wsgi.pyc
+db.sqlite3
+manage.py 
+apps/__init__.py
+apps/__init__.pyc
