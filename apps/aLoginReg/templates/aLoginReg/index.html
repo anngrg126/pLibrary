@@ -1,16 +1,40 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'aLoginReg/main.css' %}">
+
 <html>
-	
 	<head></head>
 	<body>
-		<form action = '/register' method = 'post'>
-			<input type = 'text' name = 'firstName'><br>
-			<input type = 'text' name = 'lastName'><br>
-			<input type = 'email' name = 'email'><br>
-			<input type = 'text' name = 'pw'><br>
-			<input type = 'text' name = 'confirmPw'><br>
-			<input type = 'submit' value = 'Register'><br><br>
 
-		</form>
+		{% for err in messages %}
+		{{err}}
+		{% endfor %}
+
+		<div id = 'container'>
+			<div id = 'register'>
+				<form action = '/register' method = 'post'>
+					{% csrf_token %}
+					<input type = 'text' name = 'firstName' placeholder = 'Enter First Name'><br><br>
+					<input type = 'text' name = 'lastName' placeholder = 'Enter Last Name'><br><br>
+					<input type = 'email' name = 'email' placeholder = 'Enter Email'><br><br>
+					<input type = 'text' name = 'pw' placeholder = 'Enter Password'><br><br>
+					<input type = 'text' name = 'confirmPw' placeholder = 'Confirm Password'><br><br>
+					<input type = 'submit' value = 'Register'><br><br>
+				</form>
+			</div>
+
+			<div id = 'login'>
+				<form action = '/login' method = 'post'>
+				{% csrf_token %}
+					<input type = 'text' name = 'email' placeholder = 'Enter Email'><br><br>
+					<input type = 'text' name = 'pw' placeholder = 'Enter Password'><br><br>
+					<input type = 'submit' value = 'Login'>
+				</form>
+			</div>
+
+
+		</div>
+
+
 
 
 	</body>

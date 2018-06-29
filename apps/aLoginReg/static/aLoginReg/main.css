@@ -1,0 +1,17 @@
+#register {
+
+	display: inline;
+	width: 60%;
+	float: left;
+
+}
+
+
+#login {
+
+	display: inline;
+	width: 40%;
+	float: right;
+
+
+}
